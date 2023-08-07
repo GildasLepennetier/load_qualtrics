@@ -5,6 +5,6 @@ qualtrics_long_format <- function(survey_tbl,	columns = c("StartDate","RecordedD
 	# also: remove useless column if needed
 	# columns to give a list of column to put in long, that are not question with Q
 	survey_tbl %>% pivot_longer(values_to = "value",names_to = "export_tag",
-				    cols = c(contains("Q"), columns), #"EndDate","Progress",
+				    cols = c(contains("Q"), contains("S"), columns), #"EndDate","Progress",
 				    values_transform = as.character)
 }
